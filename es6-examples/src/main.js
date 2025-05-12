@@ -165,3 +165,29 @@
 // [y, x] = [x, y];
 
 // console.log(x, y);
+
+// TEMPLATE LITERALS - back tick (``)
+// - Embed variables within strings without concatenation (+)
+// - Multiline strings with new line operator (\n)
+
+// let username = "John Doe";
+// let userAge = 23;
+
+// let greetings = `Hello from ${username}!
+
+// I'm ${userAge} years old.
+// `;
+
+// console.log(greetings);
+
+// DEFAULT PARAMETER
+function demoFn(args = []) {
+  if (args.length > 2) {
+    console.log("Too much value");
+  } else {
+    console.log("Too few values");
+  }
+}
+
+demoFn();
+demoFn([1, 2, 3, 4]);
