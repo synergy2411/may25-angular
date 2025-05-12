@@ -118,3 +118,50 @@
 // let user = ["john@test", 23, true];
 
 // demoFn(...user);
+
+// DESTRUCTURING : unpacking the collection
+// let employee = {
+//   firstName: "Monica",
+//   lastName: "Geller",
+//   age: 22,
+//   address: {
+//     city: "Pune",
+//     street: "201 Main Road, Wakad",
+//   },
+// };
+
+// let { age } = employee;
+
+// console.log(age);
+
+// console.log(firstName + " " + lastName);
+// console.log(city + " " + street);
+
+// let friends = ["Monica", "Joy", "Ross", "Rachel"];
+// let [f1, f3, f4, f2] = friends;
+
+// console.log(f2); // ?
+
+// let employees = [
+//   { email: "john@test", salary: 10 },
+//   { email: "jenny@test", salary: 12 },
+//   { email: "james@test", salary: 14 },
+// ];
+
+// let [
+//   { email: emailA, salary: salaryA },
+//   { email: emailB, salary: salaryB },
+//   {},
+// ] = employees;
+
+// console.log(employees[0].email);
+
+// console.log(emailA, salaryA);
+
+// Swapping two variables value without using third variable
+// let x = 10;
+// let y = 20;
+
+// [y, x] = [x, y];
+
+// console.log(x, y);
