@@ -276,7 +276,7 @@ function promiseFactory(arr, time) {
 
 const p1 = promiseFactory([2, 3, 4], 2000);
 const p2 = promiseFactory([2, 3], 1500);
-// const p3 = Promise.resolve("SUCCESS");
+const p3 = Promise.resolve("SUCCESS");
 
 // Promise.all([p1, p2, p3]).then(console.log).catch(console.error);
 // Promise.allSettled([p1, p2, p3]).then(console.log).catch(console.error);
