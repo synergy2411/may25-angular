@@ -240,16 +240,50 @@
 
 // REST Call using promise
 
-function fetchUsers() {
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => {
-      // console.log(response);
-      return response.json();
-    })
-    .then((users) => {
-      console.log("All Users : ", users);
-    })
-    .catch(console.error);
+// function fetchUsers() {
+//   fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((response) => {
+//       // console.log(response);
+//       return response.json();
+//     })
+//     .then((users) => {
+//       console.log("All Users : ", users);
+//     })
+//     .catch(console.error);
+// }
+
+// fetchUsers();
+
+// Promise API
+// - all : all or none
+// - allSettled : all the settled result irrespect of fulfilled or rejected
+// - race : first settled promise irrespect of fulfilled or rejected
+// - any : first fulfilled promise
+// - resolve : immediately resolve promise
+// - reject : immediately reject promise
+
+function promiseFactory(arr, time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (arr.length > 2) {
+        return resolve(arr);
+      } else {
+        return reject(new Error("Too low values"));
+      }
+    }, time);
+  });
 }
 
-fetchUsers();
+const p1 = promiseFactory([2, 3, 4], 2000);
+const p2 = promiseFactory([2, 3], 1500);
+// const p3 = Promise.resolve("SUCCESS");
+
+// Promise.all([p1, p2, p3]).then(console.log).catch(console.error);
+// Promise.allSettled([p1, p2, p3]).then(console.log).catch(console.error);
+// Promise.race([p1, p2]).then(console.log).catch(console.error);
+Promise.any([p1, p2]).then(console.log).catch(console.error);
+
+// Promise.resolve("Some API Data").then(console.log).catch(console.error);
+// Promise.reject(new Error("Bad happened"))
+//   .then(console.log)
+//   .catch(console.error);
