@@ -196,29 +196,60 @@
 // PROMISES
 
 // Producer
-function buildPromise() {
-  const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // resolve({ message: "SUCCESS" });
-      reject(new Error("Something went wrong!"));
-    }, 1500);
-  });
+// function buildPromise() {
+//   const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // resolve({ message: "SUCCESS" });
+//       reject(new Error("Something went wrong!"));
+//     }, 1500);
+//   });
 
-  return promise;
-}
+//   return promise;
+// }
 
 // Consumer
 // 1. then().catch()
 // 2. async...await keywords
 
-function consumePromise() {
-  console.log("Start");
-  buildPromise()
+// async function consumePromise() {
+//   try {
+//     const response = await buildPromise();
+//     console.log("RESPONSE : ", response);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// consumePromise();
+
+// function consumePromise() {
+//   console.log("Start");
+//   buildPromise()
+//     .then((response) => {
+//       console.log("RESPONSE : ", response);
+//       return response.message;
+//     })
+//     .then((messageStatus) => {
+//       console.log("Second then() - ", messageStatus);
+//     })
+//     .catch((err) => console.error(err));
+//   console.log("End");
+// }
+
+// consumePromise();
+
+// REST Call using promise
+
+function fetchUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => {
-      console.log("RESPONSE : ", response);
+      // console.log(response);
+      return response.json();
     })
-    .catch((err) => console.error(err));
-  console.log("End");
+    .then((users) => {
+      console.log("All Users : ", users);
+    })
+    .catch(console.error);
 }
 
-consumePromise();
+fetchUsers();
