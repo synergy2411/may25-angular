@@ -40,4 +40,11 @@
 
 # TypeScript
 
+# TypeScript Development Environment -
+
+> npm create vite@latest > choose Vanilla > TypeScript
+> cd es6-examples
+> npm install
+> npm run dev
+
 # Angular
