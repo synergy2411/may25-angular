@@ -148,12 +148,13 @@
 //   { email: "james@test", salary: 14 },
 // ];
 
-// let [
-//   { email: emailA, salary: salaryA },
-//   { email: emailB, salary: salaryB },
-//   {},
-// ] = employees;
+// let [e1, e2, e3] = employees;
 
+// let { email, salary } = e1;
+
+// let [{ email: e1, salary: s1 }, { email: e2, salary: s2 }, {}] = employees;
+
+// console.log(e2, s2);
 // console.log(employees[0].email);
 
 // console.log(emailA, salaryA);
@@ -181,13 +182,43 @@
 // console.log(greetings);
 
 // DEFAULT PARAMETER
-function demoFn(args = []) {
-  if (args.length > 2) {
-    console.log("Too much value");
-  } else {
-    console.log("Too few values");
-  }
+// function demoFn(args = []) {
+//   if (args.length > 2) {
+//     console.log("Too much value");
+//   } else {
+//     console.log("Too few values");
+//   }
+// }
+
+// demoFn();
+// demoFn([1, 2, 3, 4]);
+
+// PROMISES
+
+// Producer
+function buildPromise() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve({ message: "SUCCESS" });
+      reject(new Error("Something went wrong!"));
+    }, 1500);
+  });
+
+  return promise;
 }
 
-demoFn();
-demoFn([1, 2, 3, 4]);
+// Consumer
+// 1. then().catch()
+// 2. async...await keywords
+
+function consumePromise() {
+  console.log("Start");
+  buildPromise()
+    .then((response) => {
+      console.log("RESPONSE : ", response);
+    })
+    .catch((err) => console.error(err));
+  console.log("End");
+}
+
+consumePromise();

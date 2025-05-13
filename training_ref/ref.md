@@ -11,8 +11,6 @@
 - Asynchronous
 - Single Thread
 
-libuv
-
 # JavaScript
 
 - MEAN Stack : Mongo Express Angular Node
@@ -29,3 +27,17 @@ libuv
 
 - Primitive : String, number, boolean
 - Reference: Object, Array, Date, Function
+
+# ES6+ Features
+
+- Arrow function
+- Rest / Spread (...)
+- Destructuring - Array, Object
+- Block Scoping - let, const
+- Template Literals - `` (back tick)
+- Default Parameter
+- Promises
+
+# TypeScript
+
+# Angular
