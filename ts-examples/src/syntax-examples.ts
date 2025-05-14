@@ -126,3 +126,48 @@ export class Animal {
     return `${this.animal.species} does have ${this.animal.legs} legs.`;
   }
 }
+
+let animal: IAnimal = {
+  species: "Cat",
+  legs: 4,
+};
+
+let bunny = new Animal(animal);
+
+console.log(bunny.getDetails());
+
+// GENERIC
+
+type User = {
+  name: string;
+  age: number;
+};
+
+function addAtBeginning<T>(item: T, arr: Array<T>): Array<T> {
+  return [item, ...arr];
+}
+
+let [newItem] = addAtBeginning("Monica", ["Joey", "Ross", "Rachel"]);
+
+// const [firstItem] = addAtBeginning<number>(99, [98, 97, 99]);
+
+const [firstItem] = addAtBeginning<User>({ name: "John", age: 22 }, [
+  { name: "Jenny", age: 21 },
+  { name: "James", age: 20 },
+]);
+
+function genericFn<T extends { email: string }>(args: T) {
+  console.log(args);
+}
+
+let employee1 = { email: "john@test", age: 22 };
+let employee2 = { email: "john@test", salary: 20 };
+
+genericFn<{ email: string; age: number }>(employee1);
+genericFn<{ email: string; salary: number }>(employee2);
+
+// DECORATOR
+// - Class: @Component({}), @Pipe(), @Directive(), @Injectable(), @NgModule()
+// - Method: @HostListener()
+// - Property: @HostBinding(), @Input(), @Output()
+// - Parameter: @Inject(), @Skip()

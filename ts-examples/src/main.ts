@@ -1,13 +1,16 @@
-import { Animal, IAnimal } from "./syntax-examples.ts";
+import "./syntax-examples.ts";
+import { getLuckyNumber } from "./util.ts";
 
-let animal: IAnimal = {
-  species: "Cat",
-  legs: 4,
-};
+console.log("Your lucky number today - ", getLuckyNumber());
 
-let bunny = new Animal(animal);
+// let animal: IAnimal = {
+//   species: "Cat",
+//   legs: 4,
+// };
 
-console.log(bunny.getDetails());
+// let bunny = new Animal(animal);
+
+// console.log(bunny.getDetails());
 
 window.onload = function () {
   const titleEl = document.getElementById("txtTitle") as HTMLInputElement;
