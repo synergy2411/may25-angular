@@ -1,3 +1,14 @@
+import { Animal, IAnimal } from "./syntax-examples.ts";
+
+let animal: IAnimal = {
+  species: "Cat",
+  legs: 4,
+};
+
+let bunny = new Animal(animal);
+
+console.log(bunny.getDetails());
+
 window.onload = function () {
   const titleEl = document.getElementById("txtTitle") as HTMLInputElement;
   const amountEl: HTMLInputElement = document.getElementById(

@@ -37,8 +37,24 @@
 - Template Literals - `` (back tick)
 - Default Parameter
 - Promises
+  > then().catch()
+  > async...await
+  > Promise API - all, allsettled, race, any, resolve, reject
 
-# TypeScript
+# TypeScript: JavaScript with type syntax
+
+# Types in TypeScript
+
+- All JS DataTypes
+- void
+- any
+- unknown
+- never
+- union
+- undefined
+- null
+- tuple
+- Custom types - type, interface, class
 
 # TypeScript Development Environment -
 
