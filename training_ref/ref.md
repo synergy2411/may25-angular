@@ -55,6 +55,9 @@
 - null
 - tuple
 - Custom types - type, interface, class
+- Generics
+- Decorators
+- Module System
 
 # TypeScript Development Environment -
 
@@ -63,4 +66,32 @@
 > npm install
 > npm run dev
 
-# Angular
+# JavaScript Libraries / Framework
+
+- AngularJS (v1.x) - Library
+- \*Angular - super-heroic framework
+- React : Library; 35kb; quickly render the UI. SPA - react-router-dom, State Management - Redux, Form Validation - yup, formik, react-hook-form etc
+- jQuery : DOM Manipulation, Animation, AJAX Calls
+- \*Vue : template oriented progreessive framework; "Evan You"
+- Knockout : MVVM Pattern; 2 way data binding
+- Backbone : MVC Pattern at client side
+- Polymer : create custom web components
+- Stencil : Virtual DOM concepts to create Custom web components
+- Electron : Desktop apps
+- \*Ember : very frequent API changes
+- Express/ Hapi/ Koa/ KrakenJS/ SailsJS : Server-side web application framework
+- Node : Server side platform
+
+# Angular CLI Installation
+
+- [sudo] npm install @angular/cli@17 -g
+- ng version
+- ng new my-app --no-standalone (generates angular project with modules)
+- cd my-app
+- ng serve | npm start > starts Webpack dev Server
+
+# Angular CLI Commands
+
+- ng generate component path/to/component
+- ng g c path/to/component
+- ng g c components/users (ts, html, css, spec)

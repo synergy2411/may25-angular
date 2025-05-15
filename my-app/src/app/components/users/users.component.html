@@ -1,0 +1,10 @@
+<h2>Users component loaded successfully!</h2>
+<ul>
+  <li>
+    <img [src]="user.imagePath" />
+    <button (click)="onMoreInfo(user)">More Info</button>
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <p>Income : <span [innerText]="user.income"></span></p>
+    <p>Date of Birth : <span [innerText]="user.dob"></span></p>
+  </li>
+</ul>
