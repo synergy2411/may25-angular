@@ -14,6 +14,7 @@ export class UsersComponent {
     income: 50,
     dob: new Date('Dec 2, 1964'),
     imagePath: './assets/images/bill.jpeg',
+    votes: 120,
   };
 
   onMoreInfo(selectedUser: any) {
