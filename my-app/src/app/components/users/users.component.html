@@ -2,13 +2,10 @@
   <li class="list-group-item">
     <div class="row">
       <div class="col-4 text-center">
-        <img [src]="user.imagePath" class="img-fluid rounded-circle" />
-        <br />
-        <button class="btn btn-info m-3" (click)="onMoreInfo(user)">
-          More Info
-        </button>
+        <app-user-img [user]="user"></app-user-img>
       </div>
       <div class="col-8">
+        <app-user-info></app-user-info>
         <h2>{{ user.firstName }} {{ user.lastName }}</h2>
         <p>Income : <span [innerText]="user.income"></span></p>
         <p>Date of Birth : <span [innerText]="user.dob"></span></p>
