@@ -95,3 +95,46 @@
 - ng generate component path/to/component
 - ng g c path/to/component
 - ng g c components/users (ts, html, css, spec)
+
+# Adding Bootstrap in Project
+
+> npm install bootstrap@5
+> changes in angular.json file
+
+    - "./node_modules/bootstrap/dist/css/bootstrap.min.css" inside styles property
+
+> restart the server
+
+ng g c components/users/user-info
+ng g c components/users/user-img
+ng g c components/demo/life-cycle
+
+# Angular Components
+
+- Reusable peice of code
+- Creates view
+- PB and EB Syntax
+- Nested Comp Communication
+  > @Input() / @Output()
+- Life Cycle
+  > onChanges
+  > onInit
+  > doCheck
+  > afterContentInit
+  > afterContentChecked
+  > afterViewInit
+  > afterViewChecked
+  > onDestroy
+- Code refactoring
+  > Custom Data Type
+  > Model separated from View
+
+# Angular Directives
+
+- Component : view associated
+- Attribute : changes the appearence eg. ngStyle, ngClass
+- Structural : changes the DOM layout. eg. *ngIf, *ngFor, \*ngSwitch
+
+> ng g c components/demo/directives-example
+
+# Angular Pipes

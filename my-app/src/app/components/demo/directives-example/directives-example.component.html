@@ -1,0 +1,19 @@
+<!-- ngStyle -->
+<button class="btn btn-primary" (click)="onChangeStyle()">Change Style</button>
+<h1
+  [ngStyle]="dynamicStyle"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  Product Name : {{ product.title }}
+</h1>
+
+<!-- ngClass -->
+
+<h2
+  [ngClass]="dynamicClasses"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  Price : ${{ product.price }}
+</h2>
