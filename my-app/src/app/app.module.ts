@@ -34,7 +34,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     BrowserModule,
     FormsModule,
   ],
-  providers: [], // Injecting the dependencies / Services
+  providers: [ReversePipe], // Injecting the dependencies / Services
   bootstrap: [AppComponent], // Root Component loaded here
 })
 export class AppModule {}

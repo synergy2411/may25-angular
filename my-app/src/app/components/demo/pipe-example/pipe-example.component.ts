@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReversePipe } from '../../../pipes/reverse.pipe';
 
 @Component({
   selector: 'app-pipe-example',
@@ -24,6 +25,12 @@ export class PipeExampleComponent {
   ];
 
   filteredStatus = '';
+
+  onMouseEnter() {
+    this.greetings = new ReversePipe().transform(this.greetings);
+    // console.log(reverseStr);
+    return this.greetings;
+  }
 }
 
 // Promise State
