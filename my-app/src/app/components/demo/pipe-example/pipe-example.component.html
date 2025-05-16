@@ -3,3 +3,38 @@
 <h2>Promise Data : {{ promise | async }}</h2>
 
 <h2>Contact Us: {{ contactNumber | countryCode }}</h2>
+
+<h2>Greetings : {{ greetings | reverse }}</h2>
+<hr />
+
+<div class="row mb-4">
+  <div class="col-6">
+    <select class="form-control" [(ngModel)]="filteredStatus">
+      <option value="">Select Option</option>
+      <option value="pending">Pending Todos</option>
+      <option value="completed">Completed Todos</option>
+    </select>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li
+    *ngFor="let todo of todoCollection | filter : filteredStatus"
+    class="list-group-item"
+  >
+    <p>
+      {{ todo.label | uppercase }}
+      <span class="float-end">
+        {{ todo.status | titlecase }}
+      </span>
+    </p>
+  </li>
+</ul>
+
+<!-- <h2>
+  Greetings :
+  <span
+    [innerText]="greetings"
+    (mouseenter)="greetings = greetings | reverse"
+  ></span>
+</h2> -->

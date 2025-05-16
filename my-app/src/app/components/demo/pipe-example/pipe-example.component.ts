@@ -13,6 +13,17 @@ export class PipeExampleComponent {
   });
 
   contactNumber = 9876543210;
+
+  greetings = 'Hello there';
+
+  todoCollection = [
+    { label: 'shopping', status: 'pending' },
+    { label: 'insurance', status: 'completed' },
+    { label: 'planting', status: 'pending' },
+    { label: 'grocery', status: 'completed' },
+  ];
+
+  filteredStatus = '';
 }
 
 // Promise State

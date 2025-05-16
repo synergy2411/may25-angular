@@ -11,6 +11,8 @@ import { DirectivesExampleComponent } from './components/demo/directives-example
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
     HighlightDirective,
     PipeExampleComponent,
     CountryCodePipe,
+    ReversePipe,
+    FilterPipe,
   ],
   imports: [
     // imports module to access their functionality

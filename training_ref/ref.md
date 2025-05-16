@@ -137,4 +137,11 @@ ng g c components/demo/life-cycle
 
 > ng g c components/demo/directives-example
 
+> ng g d directives/highlight
+
 # Angular Pipes
+
+> ng g c components/demo/pipe-example
+
+> ng g p pipes/country-code
+> ng g p pipes/reverse
