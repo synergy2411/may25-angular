@@ -6,12 +6,29 @@ import { Component } from '@angular/core';
   styleUrl: './directives-example.component.css',
 })
 export class DirectivesExampleComponent {
-  product = {
-    title: 'IPhone',
-    brand: 'Apple',
-    price: 1999,
-    isAvailable: true,
-  };
+  products = [
+    {
+      title: 'IPhone',
+      brand: 'Apple',
+      price: 1999,
+      isAvailable: true,
+      qty: 199,
+    },
+    {
+      title: 'Galaxy',
+      brand: 'Samsung',
+      price: 1799,
+      isAvailable: false,
+      qty: 0,
+    },
+    {
+      title: 'S21',
+      brand: 'Samsung',
+      price: 1899,
+      isAvailable: true,
+      qty: 200,
+    },
+  ];
 
   dynamicStyle = { color: 'blue', border: '2px green solid' };
   dynamicClasses = { 'my-border': false, 'my-color': true };

@@ -1,3 +1,47 @@
+<!-- *ngFor -->
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Availability</th>
+      <th>Even</th>
+      <th>First El</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let product of products;
+        index as i;
+        even as isEven;
+        odd as isOdd;
+        first as isFirst;
+        last as isLast
+      "
+    >
+      <td [ngClass]="{ 'my-border': isEven }">{{ i + 1 }}</td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.brand }}</td>
+      <td>{{ product.price }}</td>
+      <!-- <td>{{ product.isAvailable ? product.qty : "Unavailable" }}</td> -->
+      <td>
+        <span *ngIf="product.isAvailable; else productNotAvailable">{{
+          product.qty
+        }}</span>
+      </td>
+      <td>{{ isEven }}</td>
+      <td>{{ isFirst }}</td>
+      <ng-template #productNotAvailable>
+        <span>Not Available</span>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
+
 <!-- ngStyle -->
 <button class="btn btn-primary" (click)="onChangeStyle()">Change Style</button>
 <h1
@@ -5,7 +49,7 @@
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
 >
-  Product Name : {{ product.title }}
+  Product Name : {{ products[0].title }}
 </h1>
 
 <!-- ngClass -->
@@ -15,5 +59,5 @@
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
 >
-  Price : ${{ product.price }}
+  Price : ${{ products[0].price }}
 </h2>
