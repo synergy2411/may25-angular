@@ -5,3 +5,14 @@
 .my-color {
   color: goldenrod;
 }
+
+.demo {
+  color: red;
+}
+
+#example {
+}
+
+[name="firstName"] {
+  background-color: rgb(236, 178, 178);
+}

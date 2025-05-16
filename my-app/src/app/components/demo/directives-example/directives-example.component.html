@@ -1,3 +1,9 @@
+<!-- Custom Directive -->
+
+<h1 myHighlight favColor="golden">This is custom directive example</h1>
+
+<input type="text" name="firstName" />
+
 <!-- ngSwitch -->
 
 <ul class="nav nav-tabs">
@@ -41,7 +47,7 @@
       "
     >
       <td [ngClass]="{ 'my-border': isEven }">{{ i + 1 }}</td>
-      <td>{{ product.title }}</td>
+      <td appHighlight>{{ product.title }}</td>
       <td>{{ product.brand }}</td>
       <td>{{ product.price }}</td>
       <!-- <td>{{ product.isAvailable ? product.qty : "Unavailable" }}</td> -->
