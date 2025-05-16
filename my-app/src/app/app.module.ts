@@ -9,6 +9,8 @@ import { UserInfoComponent } from './components/users/user-info/user-info.compon
 import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.component';
 import { DirectivesExampleComponent } from './components/demo/directives-example/directives-example.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     LifeCycleComponent,
     DirectivesExampleComponent,
     HighlightDirective,
+    PipeExampleComponent,
+    CountryCodePipe,
   ],
   imports: [
     // imports module to access their functionality
