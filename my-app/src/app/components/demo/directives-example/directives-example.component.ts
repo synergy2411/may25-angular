@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './directives-example.component.css',
 })
 export class DirectivesExampleComponent {
+  tab = 1;
+
   products = [
     {
       title: 'IPhone',

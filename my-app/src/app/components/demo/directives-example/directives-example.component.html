@@ -1,3 +1,20 @@
+<!-- ngSwitch -->
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link" (click)="tab = 1">1</a></li>
+  <li class="nav-item"><a class="nav-link" (click)="tab = 2">2</a></li>
+  <li class="nav-item"><a class="nav-link" (click)="tab = 3">3</a></li>
+</ul>
+
+<div [ngSwitch]="tab">
+  <div *ngSwitchCase="1">Output 1</div>
+  <div *ngSwitchCase="2">Output 2</div>
+  <div *ngSwitchCase="3">Output 3</div>
+  <div *ngSwitchDefault>Default Output</div>
+</div>
+
+<br />
+
 <!-- *ngFor -->
 
 <table class="table table-stripped">
