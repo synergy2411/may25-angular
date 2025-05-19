@@ -20,6 +20,7 @@ export class RegisterComponent {
     Validators.minLength(6),
     RegisterComponent.hasExclamationMark,
   ]);
+  cnfPassword = new FormControl('', [Validators.required]);
 
   registrationForm: FormGroup;
 
@@ -27,6 +28,7 @@ export class RegisterComponent {
     this.registrationForm = this.fb.group({
       username: this.username,
       password: this.password,
+      cnfPassword: this.cnfPassword,
     });
   }
 
@@ -37,5 +39,17 @@ export class RegisterComponent {
   static hasExclamationMark(control: AbstractControl): ValidationErrors | null {
     const hasExclamation = control.value.indexOf('!') >= 0;
     return hasExclamation ? null : { hasExcalamationError: true };
+  }
+
+  confirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
+    console.log(this && this.registrationForm);
+    if (this && this.registrationForm) {
+      console.log(this.registrationForm.get('password')!.value);
+      const isMatched =
+        control.value === this.registrationForm.get('password')!.value;
+      return isMatched ? null : { confirmPassword: true };
+    } else {
+      return null;
+    }
   }
 }

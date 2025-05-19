@@ -64,6 +64,35 @@
             </div>
           </div>
 
+          <!-- confirm password -->
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              name="cnfPassword"
+              id="cnfPassword"
+              placeholder=""
+              [formControl]="cnfPassword"
+            />
+            <label for="cnfPassword">Confirm Password:</label>
+
+            <div *ngIf="cnfPassword.touched && cnfPassword.invalid">
+              <p class="alert alert-danger">
+                Confirm Password field is having following problem -
+              </p>
+              <div *ngIf="cnfPassword.hasError('required')">
+                <p class="alert alert-danger">
+                  Confirm Password field is mandatory.
+                </p>
+              </div>
+              <div *ngIf="cnfPassword.hasError('confirmPassword')">
+                <p class="alert alert-danger">
+                  Confirm Password field must match with password field.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <!-- buttons - register / reset -->
           <div class="row">
             <div class="col">
