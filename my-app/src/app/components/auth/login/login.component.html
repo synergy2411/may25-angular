@@ -2,10 +2,10 @@
   <div class="col-8 offset-2">
     <div class="card">
       <div class="card-header">
-        <h2 class="text-center">Login Form</h2>
+        <h1 class="text-center">Login Form</h1>
       </div>
       <div class="card-body">
-        <form>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmitForm(loginForm)">
           <!-- email -->
           <div class="form-floating mb-3">
             <input
@@ -14,6 +14,9 @@
               name="email"
               id="email"
               placeholder=""
+              ngModel
+              required
+              email
             />
             <label for="email">Email:</label>
           </div>
@@ -26,6 +29,9 @@
               name="password"
               id="password"
               placeholder=""
+              ngModel
+              required
+              minlength="6"
             />
             <label for="password">Password:</label>
           </div>
@@ -35,12 +41,20 @@
           <div class="row">
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-primary">Login</button>
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  [disabled]="!loginForm.valid"
+                >
+                  Login
+                </button>
               </div>
             </div>
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-secondary">Reset</button>
+                <button class="btn btn-secondary" (click)="loginForm.reset()">
+                  Reset
+                </button>
               </div>
             </div>
           </div>
