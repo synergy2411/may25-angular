@@ -19,7 +19,7 @@
             <label for="username">Username:</label>
             <div *ngIf="username.touched && username.invalid">
               <p class="alert alert-danger">
-                Usename field is having some problem.
+                Usename field is having following problem -
               </p>
               <div *ngIf="username.hasError('required')">
                 <p class="alert alert-danger">Username field is mandatory.</p>
@@ -43,6 +43,25 @@
               [formControl]="password"
             />
             <label for="password">Password:</label>
+
+            <div *ngIf="password.touched && password.invalid">
+              <p class="alert alert-danger">
+                Password field is having following problem -
+              </p>
+              <div *ngIf="password.hasError('required')">
+                <p class="alert alert-danger">Password field is mandatory.</p>
+              </div>
+              <div *ngIf="password.hasError('minlength')">
+                <p class="alert alert-danger">
+                  Password field must have 6 characters at least.
+                </p>
+              </div>
+              <div *ngIf="password.hasError('hasExcalamationError')">
+                <p class="alert alert-danger">
+                  Password field must have exclamation sign in it.
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- buttons - register / reset -->

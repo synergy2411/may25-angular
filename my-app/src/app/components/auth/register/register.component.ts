@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 
@@ -16,6 +18,7 @@ export class RegisterComponent {
   password = new FormControl('', [
     Validators.required,
     Validators.minLength(6),
+    RegisterComponent.hasExclamationMark,
   ]);
 
   registrationForm: FormGroup;
@@ -29,5 +32,10 @@ export class RegisterComponent {
 
   onSubmit() {
     console.log(this.registrationForm);
+  }
+
+  static hasExclamationMark(control: AbstractControl): ValidationErrors | null {
+    const hasExclamation = control.value.indexOf('!') >= 0;
+    return hasExclamation ? null : { hasExcalamationError: true };
   }
 }
