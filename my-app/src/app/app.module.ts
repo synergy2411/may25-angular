@@ -13,6 +13,7 @@ import { PipeExampleComponent } from './components/demo/pipe-example/pipe-exampl
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     CountryCodePipe,
     ReversePipe,
     FilterPipe,
+    LoginComponent,
   ],
   imports: [
     // imports module to access their functionality

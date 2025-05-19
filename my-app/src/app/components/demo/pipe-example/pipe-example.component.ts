@@ -33,7 +33,14 @@ export class PipeExampleComponent {
   }
 
   addNewTodo() {
-    this.todoCollection.push({ label: 'New Item', status: 'pending' });
+    // Impure
+    // this.todoCollection.push({ label: 'New Item', status: 'pending' });
+
+    // Pure
+    this.todoCollection = [
+      ...this.todoCollection,
+      { label: 'New Item', status: 'pending' },
+    ];
   }
 }
 
