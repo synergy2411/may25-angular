@@ -17,6 +17,19 @@
               [formControl]="username"
             />
             <label for="username">Username:</label>
+            <div *ngIf="username.touched && username.invalid">
+              <p class="alert alert-danger">
+                Usename field is having some problem.
+              </p>
+              <div *ngIf="username.hasError('required')">
+                <p class="alert alert-danger">Username field is mandatory.</p>
+              </div>
+              <div *ngIf="username.hasError('email')">
+                <p class="alert alert-danger">
+                  Username field must have proper email format.
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- password -->
@@ -36,7 +49,13 @@
           <div class="row">
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-success" type="submit">Register</button>
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  [disabled]="!registrationForm.valid"
+                >
+                  Register
+                </button>
               </div>
             </div>
             <div class="col">

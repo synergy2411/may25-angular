@@ -1,0 +1,15 @@
+.ng-dirty.ng-invalid[name="username"] {
+  border-bottom: 3px red solid;
+}
+
+.ng-dirty.ng-valid[name="username"] {
+  border-bottom: 3px green solid;
+}
+
+.ng-dirty.ng-invalid[name="password"] {
+  border-bottom: 3px red solid;
+}
+
+.ng-dirty.ng-valid[name="password"] {
+  border-bottom: 3px green solid;
+}
