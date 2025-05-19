@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
 // For local bootstrap loading for this component only
 // Also remove it from angular.json file
 // import "bootstrap/dist/css/bootstrap.min.css";
