@@ -11,6 +11,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-life-cycle',

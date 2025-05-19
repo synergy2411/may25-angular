@@ -139,9 +139,42 @@ ng g c components/demo/life-cycle
 
 > ng g d directives/highlight
 
+- @HostBinding
+- @HostListener()
+
 # Angular Pipes
 
 > ng g c components/demo/pipe-example
 
 > ng g p pipes/country-code
 > ng g p pipes/reverse
+> ng g p pipes/filter
+
+# Forms
+
+- States / Classes
+- Validations
+- Error Messages
+- Template Driven
+- Model Driven / Reactive Forms
+
+# Pure vs Impure
+
+let user = { // x0x01234
+name : "john"
+}
+
+let friends = ["john","jenny","james"]
+
+<!-- Immutable Change / Impure changes -->
+
+user.name = "jenny"; // x0x01234
+friends.push("joey")
+
+<!-- Mutable Change / Pure changes-->
+
+user = { // x0x198765
+name : "mary"
+}
+
+friends = ["john","jenny","james", "jeoy"]

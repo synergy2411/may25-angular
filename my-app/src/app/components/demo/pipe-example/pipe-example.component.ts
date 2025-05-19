@@ -31,6 +31,10 @@ export class PipeExampleComponent {
     // console.log(reverseStr);
     return this.greetings;
   }
+
+  addNewTodo() {
+    this.todoCollection.push({ label: 'New Item', status: 'pending' });
+  }
 }
 
 // Promise State
