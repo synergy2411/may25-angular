@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import {
+  Observable,
+  Subscription,
+  from,
+  interval,
+  map,
+  filter,
+  take,
+} from 'rxjs';
 
 @Component({
   selector: 'app-observable-example',
@@ -8,6 +16,12 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ObservableExampleComponent {
   unSub$!: Subscription;
+
+  friends = ['Monica', 'Joey', 'Rachel', 'Ross'];
+
+  fromFriends$ = from(this.friends);
+
+  interval$ = interval(1000);
 
   obs$ = new Observable((observer) => {
     setTimeout(() => {
@@ -20,9 +34,9 @@ export class ObservableExampleComponent {
       observer.next('Third Package');
     }, 3000);
 
-    setTimeout(() => {
-      observer.error(new Error('Something went wrong'));
-    }, 4000);
+    // setTimeout(() => {
+    //   observer.error(new Error('Something went wrong'));
+    // }, 4000);
 
     setTimeout(() => {
       observer.complete();
@@ -30,6 +44,20 @@ export class ObservableExampleComponent {
   });
 
   onSubscribe() {
+    this.interval$
+      .pipe(
+        filter((value) => value % 2 === 0),
+        take(5)
+      )
+      .subscribe(console.log);
+
+    this.fromFriends$.subscribe({
+      next: (data) => console.log(data),
+      complete: () => {
+        console.log('[FRIEDNS COMPLETED]');
+      },
+    });
+
     console.log('Start');
     this.unSub$ = this.obs$.subscribe({
       next: (data) => {
