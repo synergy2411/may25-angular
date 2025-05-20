@@ -7,6 +7,10 @@ import {
   map,
   filter,
   take,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
 } from 'rxjs';
 
 @Component({
@@ -75,5 +79,27 @@ export class ObservableExampleComponent {
 
   onUnsubscribe() {
     this.unSub$.unsubscribe();
+  }
+
+  onSubjects() {
+    // let subject = new Subject();
+    // let subject = new BehaviorSubject('Starting the observable');
+    // let subject = new ReplaySubject(2);
+    let subject = new AsyncSubject();
+
+    subject.next('First PAckage');
+    subject.next('Second PAckage');
+
+    subject.subscribe((data) => {
+      console.log('Sub 1', data);
+    });
+
+    subject.next('Third PAckage');
+
+    subject.subscribe((data) => {
+      console.log('Sub 2', data);
+    });
+
+    subject.complete();
   }
 }
