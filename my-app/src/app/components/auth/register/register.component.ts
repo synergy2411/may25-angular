@@ -43,7 +43,7 @@ export class RegisterComponent {
 
   addHobby() {
     const newHobby = this.fb.group({
-      name: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
       exp: new FormControl(''),
     });
     this.hobbies.push(newHobby);
