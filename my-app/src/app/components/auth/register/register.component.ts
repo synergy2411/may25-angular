@@ -49,6 +49,10 @@ export class RegisterComponent {
     this.hobbies.push(newHobby);
   }
 
+  removeHobby(i: number) {
+    this.hobbies.removeAt(i);
+  }
+
   onSubmit() {
     console.log(this.registrationForm);
   }

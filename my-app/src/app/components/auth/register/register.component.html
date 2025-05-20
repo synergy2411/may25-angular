@@ -35,7 +35,7 @@
           <!-- password -->
           <div class="form-floating mb-3">
             <input
-              type="text"
+              type="password"
               class="form-control"
               name="password"
               id="password"
@@ -67,7 +67,7 @@
           <!-- confirm password -->
           <div class="form-floating mb-3">
             <input
-              type="text"
+              type="password"
               class="form-control"
               name="cnfPassword"
               id="cnfPassword"
@@ -101,9 +101,9 @@
           <div formArrayName="hobbies" class="mb-3">
             <div *ngFor="let hobby of hobbies.controls; index as i">
               <div [formGroupName]="i">
-                <div class="row">
+                <div class="row mb-3">
                   <!-- name -->
-                  <div class="col">
+                  <div class="col-5">
                     <input
                       type="text"
                       class="form-control"
@@ -112,13 +112,21 @@
                     />
                   </div>
                   <!-- exp -->
-                  <div class="col">
+                  <div class="col-5">
                     <input
                       type="number"
                       class="form-control"
                       placeholder="years of exp"
                       formControlName="exp"
                     />
+                  </div>
+                  <!-- delete hobby button -->
+                  <div class="col-2">
+                    <div class="d-grid">
+                      <button class="btn btn-danger" (click)="removeHobby(i)">
+                        🗑️
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

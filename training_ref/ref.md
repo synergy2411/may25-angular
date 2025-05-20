@@ -191,3 +191,20 @@ Component -> Shadow DOM- encapsulation; smaller piece of Actual DOM
 
 Comp A - None h1 {color : red}
 Comp B - Native/ShadowDOM
+
+---
+
+# Pipes - Pure and
+
+# Forms
+
+- touched / untouched
+- dirty / pristine
+- valid / invalid
+
+1. Template driven
+2. Model Driven / Reactive
+   > FormControl
+   > FormGroup
+   > FormBuilder
+   > FormArray : generates form elements dynamically
