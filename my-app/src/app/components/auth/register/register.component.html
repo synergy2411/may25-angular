@@ -35,7 +35,7 @@
           <!-- password -->
           <div class="form-floating mb-3">
             <input
-              type="password"
+              type="text"
               class="form-control"
               name="password"
               id="password"
@@ -67,7 +67,7 @@
           <!-- confirm password -->
           <div class="form-floating mb-3">
             <input
-              type="password"
+              type="text"
               class="form-control"
               name="cnfPassword"
               id="cnfPassword"
@@ -85,7 +85,7 @@
                   Confirm Password field is mandatory.
                 </p>
               </div>
-              <div *ngIf="cnfPassword.hasError('confirmPassword')">
+              <div *ngIf="cnfPassword.hasError('confirmPasswordError')">
                 <p class="alert alert-danger">
                   Confirm Password field must match with password field.
                 </p>

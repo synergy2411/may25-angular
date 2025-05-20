@@ -178,3 +178,16 @@ name : "mary"
 }
 
 friends = ["john","jenny","james", "jeoy"]
+
+---
+
+Component -> Shadow DOM- encapsulation; smaller piece of Actual DOM
+
+# ViewEncapsulation :
+
+- Emulated - by default; local stylesheet will have preference over global stylesheet
+- Native / ShadowDOM - only local stylesheet will take effect; global stylesheet will be ignored
+- None - local stylesheet will be applied to the other parts of the application
+
+Comp A - None h1 {color : red}
+Comp B - Native/ShadowDOM

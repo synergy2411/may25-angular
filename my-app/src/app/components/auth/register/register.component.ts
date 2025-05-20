@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {
   AbstractControl,
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -20,7 +21,10 @@ export class RegisterComponent {
     Validators.minLength(6),
     RegisterComponent.hasExclamationMark,
   ]);
-  cnfPassword = new FormControl('', [Validators.required]);
+  cnfPassword = new FormControl('', [
+    Validators.required,
+    this.confirmPasswordValidator,
+  ]);
 
   registrationForm: FormGroup;
 
@@ -41,15 +45,12 @@ export class RegisterComponent {
     return hasExclamation ? null : { hasExcalamationError: true };
   }
 
-  confirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
-    console.log(this && this.registrationForm);
-    if (this && this.registrationForm) {
-      console.log(this.registrationForm.get('password')!.value);
+  confirmPasswordValidator(control: any): ValidationErrors | null {
+    if (control.parent && control.parent.controls) {
       const isMatched =
-        control.value === this.registrationForm.get('password')!.value;
-      return isMatched ? null : { confirmPassword: true };
-    } else {
-      return null;
+        control.value === control.parent.controls['password'].value;
+      return isMatched ? null : { confirmPasswordError: true };
     }
+    return null;
   }
 }
