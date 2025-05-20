@@ -33,7 +33,20 @@ export class RegisterComponent {
       username: this.username,
       password: this.password,
       cnfPassword: this.cnfPassword,
+      hobbies: this.fb.array([]),
     });
+  }
+
+  get hobbies() {
+    return this.registrationForm.get('hobbies') as FormArray;
+  }
+
+  addHobby() {
+    const newHobby = this.fb.group({
+      name: new FormControl(''),
+      exp: new FormControl(''),
+    });
+    this.hobbies.push(newHobby);
   }
 
   onSubmit() {
