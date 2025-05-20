@@ -16,6 +16,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DataService } from './services/data.service';
+import { CompAComponent } from './components/demo/comp-a/comp-a.component';
+import { CompBComponent } from './components/demo/comp-b/comp-b.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { DataService } from './services/data.service';
     FilterPipe,
     LoginComponent,
     RegisterComponent,
+    CompAComponent,
+    CompBComponent,
   ],
   imports: [
     // imports module to access their functionality
