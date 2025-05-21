@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IExpense } from '../models/expense';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +12,8 @@ export class ExpensesService {
   constructor(private httpClient: HttpClient) {}
 
   // GET
-  getExpenses() {
-    this.httpClient.get(this.baseURL).subscribe(console.log);
+  getExpenses(): Observable<Array<IExpense>> {
+    return this.httpClient.get<Array<IExpense>>(this.baseURL);
   }
 
   // POST
