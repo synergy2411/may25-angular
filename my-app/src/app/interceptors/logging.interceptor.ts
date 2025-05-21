@@ -1,11 +1,12 @@
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpParams,
   HttpRequest,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap, catchError } from 'rxjs';
 
 export class LoggingInterceptor implements HttpInterceptor {
   intercept(
@@ -20,7 +21,19 @@ export class LoggingInterceptor implements HttpInterceptor {
     });
 
     console.log('CLONED REQ : ', clonedReq);
-    return next.handle(clonedReq);
+
+    return next.handle(clonedReq).pipe(
+      tap((value) => {
+        console.log('RESPONSE INTERCEPTOR');
+        console.log('RESPONSE : ', value);
+      }),
+      catchError((error: HttpErrorResponse) => {
+        if (error) {
+          console.log(error.status, error.message);
+        }
+        throw error;
+      })
+    );
   }
 }
 
