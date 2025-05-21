@@ -11,6 +11,30 @@
       "title": "insurance",
       "amount": 120,
       "createdAt": "1-07-2024"
+    },
+    {
+      "title": "T-shirt",
+      "amount": 99,
+      "createdAt": "2025-05-20",
+      "id": "WzBoF2a"
+    },
+    {
+      "title": "Bag",
+      "amount": 9,
+      "createdAt": "2025-05-07",
+      "id": "t7InK6q"
+    },
+    {
+      "title": "Carpet",
+      "amount": 19,
+      "createdAt": "2025-05-15",
+      "id": "oJ3Z9Vw"
+    },
+    {
+      "title": "planting",
+      "amount": 49,
+      "createdAt": "2025-05-05",
+      "id": "QI_c3vu"
     }
   ]
 }

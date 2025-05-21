@@ -17,7 +17,13 @@ export class ExpensesService {
   }
 
   // POST
-  createExpense() {}
+  createExpense(newExpense: IExpense) {
+    return this.httpClient.post(this.baseURL, newExpense, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
 
   // DELETE
   deleteExpense(expenseId: string) {

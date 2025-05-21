@@ -282,3 +282,4 @@ providedIn: "root"
 
 > ng g s services/expenses
 > ng g c components/expenses
+> ng g c components/expenses/expense-form

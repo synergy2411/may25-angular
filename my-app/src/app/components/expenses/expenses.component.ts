@@ -28,4 +28,9 @@ export class ExpensesComponent implements OnInit {
       this.fetchExpenses();
     });
   }
+
+  onCloseForm() {
+    this.showForm = false;
+    this.fetchExpenses();
+  }
 }

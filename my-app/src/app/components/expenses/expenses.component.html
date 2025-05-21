@@ -4,7 +4,10 @@
   {{ showForm ? "Hide" : "Show" }} Form
 </button>
 
-<app-expense-form *ngIf="showForm"></app-expense-form>
+<app-expense-form
+  (childFormEvent)="onCloseForm()"
+  *ngIf="showForm"
+></app-expense-form>
 
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenses">
