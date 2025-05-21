@@ -29,4 +29,13 @@ export class ExpensesService {
   deleteExpense(expenseId: string) {
     return this.httpClient.delete(`${this.baseURL}/${expenseId}`);
   }
+
+  // Update
+  updateExpense(expenseId: string, expense: IExpense) {
+    return this.httpClient.patch(`${this.baseURL}/${expenseId}`, expense, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
 }

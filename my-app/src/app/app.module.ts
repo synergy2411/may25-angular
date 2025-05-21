@@ -1,7 +1,7 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -12,15 +12,16 @@ import { DirectivesExampleComponent } from './components/demo/directives-example
 import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.component';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
+import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { UsersComponent } from './components/users/users.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
-import { ExpensesComponent } from './components/expenses/expenses.component';
-import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,13 @@ import { ExpenseFormComponent } from './components/expenses/expense-form/expense
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [], // Registering the dependencies / Services
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true,
+    },
+  ], // Registering the dependencies / Services
   bootstrap: [AppComponent], // Root Component loaded here
 })
 export class AppModule {}
