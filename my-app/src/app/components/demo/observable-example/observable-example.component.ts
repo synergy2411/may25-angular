@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
 import {
+  AsyncSubject,
   Observable,
   Subscription,
+  filter,
   from,
   interval,
-  map,
-  filter,
   take,
-  Subject,
-  BehaviorSubject,
-  ReplaySubject,
-  AsyncSubject,
 } from 'rxjs';
 
 @Component({

@@ -208,3 +208,72 @@ Comp B - Native/ShadowDOM
    > FormGroup
    > FormBuilder
    > FormArray : generates form elements dynamically
+
+---
+
+# Services / DI
+
+> ng g s services/data
+> ng g s services/counter
+
+- CounterService : Root Module, Component, Singleton Instance
+
+- CompA : ng g c components/demo/comp-a
+- CompB : ng g c components/demo/comp-b
+
+@Injectable({
+providedIn: "root"
+})
+
+- root : injected in root of application
+- platform : singleton instance available in all running apps
+- any : different singleton instance will be available for all the modules; mostly used in lazy loading
+
+- Root Module
+- Root Component
+- Other Component
+
+# Observable / RxJS Library
+
+- Stream of events; events carry data
+- Lazy, by default
+- Cancel any time
+- Both Async and Sync
+- power operators
+
+- Observable : pipe, subscribe
+- Observer : next, error, complete
+
+- subject : are both - Observables as well as Observer; next, error, complete, pipe, subscribe
+- BehaviourSubject :
+
+  > Always start with seed value
+  > For the next subscription, the last emitted value becomes the seed value
+
+- ReplaySubject
+
+  > replays given last emitted values
+
+- AsyncSubject
+  > will provide last emitted value, once the observable is completed
+
+> ng g c components/demo/observable-example
+
+- User Input
+- Navigating
+- Rest API Call
+
+---
+
+# Http Calls
+
+# Interceptors
+
+# Routing / Navigation - SPA
+
+# Creating JSON Server
+
+- npm install json-server@0.17.4 -g
+- json-server --version
+- create db.json file
+- json-server --watch db.json

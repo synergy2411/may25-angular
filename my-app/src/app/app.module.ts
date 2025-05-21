@@ -19,6 +19,8 @@ import { DataService } from './services/data.service';
 import { CompAComponent } from './components/demo/comp-a/comp-a.component';
 import { CompBComponent } from './components/demo/comp-b/comp-b.component';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { loggingInterceptor } from './interceptors/logging.interceptor';
 
 @NgModule({
   declarations: [

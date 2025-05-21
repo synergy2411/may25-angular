@@ -1,0 +1,19 @@
+{
+  "expenses": [
+    {
+      "title": "shopping",
+      "amount": 199,
+      "createdAt": "31-04-2024"
+    },
+    {
+      "title": "insurance",
+      "amount": 120,
+      "createdAt": "1-07-2024"
+    },
+    {
+      "title": "planting",
+      "amount": 19,
+      "createdAt": "31-01-2025"
+    }
+  ]
+}
