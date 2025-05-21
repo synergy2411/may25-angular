@@ -13,8 +13,18 @@ export class ExpensesComponent implements OnInit {
   constructor(private expensesService: ExpensesService) {}
 
   ngOnInit(): void {
+    this.fetchExpenses();
+  }
+
+  private fetchExpenses() {
     this.expensesService
       .getExpenses()
       .subscribe((expenses) => (this.expenses = expenses));
+  }
+
+  onDelete(expenseId: string) {
+    this.expensesService.deleteExpense(expenseId).subscribe(() => {
+      this.fetchExpenses();
+    });
   }
 }

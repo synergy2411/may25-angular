@@ -19,5 +19,7 @@ export class ExpensesService {
   // POST
   createExpense() {}
   // DELETE
-  deleteExpense() {}
+  deleteExpense(expenseId: string) {
+    return this.httpClient.delete(`${this.baseURL}/${expenseId}`);
+  }
 }
