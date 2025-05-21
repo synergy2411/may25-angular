@@ -1,5 +1,11 @@
 <h1 class="text-center">My Expenses</h1>
 
+<button (click)="showForm = !showForm" class="btn btn-secondary mb-4">
+  {{ showForm ? "Hide" : "Show" }} Form
+</button>
+
+<app-expense-form *ngIf="showForm"></app-expense-form>
+
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenses">
     <div class="card">

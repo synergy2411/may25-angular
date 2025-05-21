@@ -9,6 +9,7 @@ import { IExpense } from '../../models/expense';
 })
 export class ExpensesComponent implements OnInit {
   expenses!: Array<IExpense>;
+  showForm: boolean = false;
 
   constructor(private expensesService: ExpensesService) {}
 
