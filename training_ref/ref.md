@@ -276,4 +276,9 @@ providedIn: "root"
 - npm install json-server@0.17.4 -g
 - json-server --version
 - create db.json file
-- json-server --watch db.json
+- data/> json-server --watch db.json
+
+# Generating expenses service
+
+> ng g s services/expenses
+> ng g c components/expenses
