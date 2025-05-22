@@ -1,9 +1,9 @@
 <header>
   <ul class="nav nav-tabs">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="!authService.isUserAuthenticated()">
       <a class="nav-link" [routerLink]="['/login']">Login</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="!authService.isUserAuthenticated()">
       <a class="nav-link" [routerLink]="['/register']">Register</a>
     </li>
     <li class="nav-item">
@@ -15,7 +15,7 @@
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/users']">Users</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="authService.isUserAuthenticated()">
       <a class="nav-link" [routerLink]="['/expenses']">Expenses</a>
     </li>
   </ul>

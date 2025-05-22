@@ -5,7 +5,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  verifiedUsers: Array<{ username: string; password: string }> = [];
+  verifiedUsers: Array<{ username: string; password: string }> = [
+    { username: 'test@test.com', password: 'test!123' },
+  ];
 
   isAuthenticated = false;
 
@@ -28,8 +30,8 @@ export class AuthService {
         user.password === password
     );
     if (position >= 0) {
-      this.isAuthenticated = true;
       setTimeout(() => {
+        this.isAuthenticated = true;
         console.log('User verified successfully!');
         this.router.navigateByUrl('/expenses');
       }, 1000);

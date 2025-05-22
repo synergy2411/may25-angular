@@ -6,6 +6,7 @@ import { UsersComponent } from './components/users/users.component';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { loginGuard } from './guards/login.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -24,6 +25,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'expenses', // http://localhost:4200/expenses
     component: ExpensesComponent,
+    canActivate: [loginGuard],
   },
   {
     path: 'users', // http://localhost:4200/user
