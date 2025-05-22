@@ -267,6 +267,11 @@ providedIn: "root"
 
 # Http Calls
 
+- GET
+- POST
+- DELETE
+- PATCH
+
 # Interceptors
 
 # Routing / Navigation - SPA
@@ -283,3 +288,18 @@ providedIn: "root"
 > ng g s services/expenses
 > ng g c components/expenses
 > ng g c components/expenses/expense-form
+
+# Interceptors
+
+- intercepts outgoing request
+- intercepts incoming responses
+- Logging, Auth Token, Caching, Error Handling
+- runs in the order of placement
+- providers: [{provide : "", useClass : "", multi: true}] of Module
+- ng g interceptor interceptors/logging
+
+---
+
+# Routing
+
+> ng g c components/header

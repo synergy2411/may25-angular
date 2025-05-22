@@ -10,6 +10,7 @@ import { IExpense } from '../../models/expense';
 export class ExpensesComponent implements OnInit {
   expenses!: Array<IExpense>;
   showForm: boolean = false;
+  selectedExpense!: IExpense;
 
   constructor(private expensesService: ExpensesService) {}
 
@@ -32,5 +33,10 @@ export class ExpensesComponent implements OnInit {
   onCloseForm() {
     this.showForm = false;
     this.fetchExpenses();
+  }
+
+  onEdit(expense: IExpense) {
+    this.showForm = true;
+    this.selectedExpense = expense;
   }
 }

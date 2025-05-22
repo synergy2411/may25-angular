@@ -2,6 +2,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -22,6 +23,9 @@ import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { APP_ROUTES } from './app.routing';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
     ObservableExampleComponent,
     ExpensesComponent,
     ExpenseFormComponent,
+    PageNotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     // imports module to access their functionality
@@ -51,6 +57,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
     {

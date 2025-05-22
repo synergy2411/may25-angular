@@ -4,10 +4,22 @@
   {{ showForm ? "Hide" : "Show" }} Form
 </button>
 
-<app-expense-form
-  (childFormEvent)="onCloseForm()"
-  *ngIf="showForm"
-></app-expense-form>
+<div *ngIf="!selectedExpense">
+  <app-expense-form
+    (childFormEvent)="onCloseForm()"
+    *ngIf="showForm"
+    (cancelEvent)="showForm = false"
+  ></app-expense-form>
+</div>
+
+<div *ngIf="selectedExpense">
+  <app-expense-form
+    (childFormEvent)="onCloseForm()"
+    *ngIf="showForm"
+    [expense]="selectedExpense"
+    (cancelEvent)="showForm = false"
+  ></app-expense-form>
+</div>
 
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenses">
@@ -19,6 +31,13 @@
         <p>Amount : {{ expense.amount | currency : "INR" }}</p>
         <p>Created At : {{ expense.createdAt | date : "dd/MM/yyyy" }}</p>
         <div class="float-end">
+          <button
+            class="btn btn-outline-success btn-sm"
+            (click)="onEdit(expense)"
+          >
+            Edit
+          </button>
+
           <button
             class="btn btn-outline-danger btn-sm"
             (click)="onDelete(expense.id)"

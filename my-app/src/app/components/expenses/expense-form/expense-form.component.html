@@ -1,6 +1,6 @@
-<div class="backdrop">
+<div class="backdrop" (keypress)="onKeyPress($event)">
   <div class="my-model">
-    <h2 class="text-center">Add New Expense</h2>
+    <h2 class="text-center">{{ title }}</h2>
     <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm)">
       <!-- title -->
       <div class="form-floating mb-3">
@@ -10,7 +10,7 @@
           name="title"
           id="title"
           placeholder=""
-          ngModel
+          [(ngModel)]="expenseTitle"
         />
         <label for="title">Title:</label>
       </div>
@@ -23,7 +23,7 @@
           name="amount"
           id="amount"
           placeholder=""
-          ngModel
+          [(ngModel)]="expenseAmount"
         />
         <label for="amount">Amount:</label>
       </div>
@@ -36,21 +36,29 @@
           name="createdAt"
           id="createdAt"
           placeholder=""
-          ngModel
+          [(ngModel)]="expenseCreatedAt"
         />
         <label for="createdAt">Date:</label>
       </div>
 
-      <!-- buttons - Add / Cancel -->
+      <!-- buttons - Add / Cancel / Edit -->
       <div class="row">
         <div class="col">
           <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">
+              {{ expenseTitle.trim() !== "" ? "Edit" : "Add" }}
+            </button>
           </div>
         </div>
         <div class="col">
           <div class="d-grid">
-            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="onCancel()"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
