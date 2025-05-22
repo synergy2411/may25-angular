@@ -26,6 +26,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,11 @@ import { HeaderComponent } from './components/header/header.component';
     RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoggingInterceptor,

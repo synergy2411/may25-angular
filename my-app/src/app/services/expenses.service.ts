@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ExpensesService {
-  private baseURL = 'http://localhost:3000/expenses';
+  // private baseURL = 'http://localhost:3000/expenses';
+  private baseURL =
+    'https://sk-ng-may-25-default-rtdb.firebaseio.com/expenses.json';
 
   constructor(private httpClient: HttpClient) {}
 
