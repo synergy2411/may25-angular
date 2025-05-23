@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {
   AsyncSubject,
   Observable,
@@ -14,8 +14,9 @@ import {
   templateUrl: './observable-example.component.html',
   styleUrl: './observable-example.component.css',
 })
-export class ObservableExampleComponent {
+export class ObservableExampleComponent implements OnDestroy {
   unSub$!: Subscription;
+  unsubInterval$!: Subscription;
 
   friends = ['Monica', 'Joey', 'Rachel', 'Ross'];
 
@@ -44,7 +45,7 @@ export class ObservableExampleComponent {
   });
 
   onSubscribe() {
-    this.interval$
+    this.unsubInterval$ = this.interval$
       .pipe(
         filter((value) => value % 2 === 0),
         take(5)
@@ -97,5 +98,9 @@ export class ObservableExampleComponent {
     });
 
     subject.complete();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubInterval$.unsubscribe();
   }
 }

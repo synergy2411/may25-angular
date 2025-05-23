@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IAmLazyComponent } from './components/i-am-lazy/i-am-lazy.component';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IAmLazyComponent } from './components/i-am-lazy/i-am-lazy.component';
 
 const LAZY_ROUTES: Routes = [
   {

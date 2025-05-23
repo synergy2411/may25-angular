@@ -336,7 +336,32 @@ http://localhost:4200/products/99/specification
 > ng g c components/demo/products/overview
 > ng g c components/demo/products/specification
 
+# Modules - lazy loading
+
+> ng g m modules/eager
+> ng g c modules/eager/components/i-am-eager
+
+> ng g m modules/lazy
+> ng g c modules/lazy/components/i-am-lazy
+
 - Modules
-- Standalone components
 - Debugging, Optimizing, Deployment preparation
+
+- Standalone components / pipes / directivs
+  > v14.x
+  > v17.x
+  > no modules required
+
+> ng new my-app --no-standalone
+> ng g c components/demo/standalone-example --standalone
+> standalone : true
+
+> with Modules
+> standalone to standalone
+> without Modules
+
+> ng new standalone-app
+
+- Signals : reactive programming
+
 - Testing

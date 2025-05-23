@@ -1,0 +1,9 @@
+<h1>Home Page</h1>
+{{ title | uppercase | reverse }}
+<h2>Counter Signal : {{ counterSignal() }}</h2>
+
+<h3>X : {{ x() }}</h3>
+<h3>y : {{ y() }}</h3>
+<h3>Z : {{ z() }}</h3>
+
+<button (click)="onIncrease()">Increase</button>
