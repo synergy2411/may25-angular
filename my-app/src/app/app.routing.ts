@@ -7,6 +7,9 @@ import { PipeExampleComponent } from './components/demo/pipe-example/pipe-exampl
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { loginGuard } from './guards/login.guard';
+import { ProductsComponent } from './components/demo/products/products.component';
+import { OverviewComponent } from './components/demo/products/overview/overview.component';
+import { SpecificationComponent } from './components/demo/products/specification/specification.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -38,6 +41,20 @@ export const APP_ROUTES: Routes = [
   {
     path: 'observables',
     component: ObservableExampleComponent,
+  },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: [
+      {
+        path: ':productId/overview/:name',
+        component: OverviewComponent,
+      },
+      {
+        path: 'specification',
+        component: SpecificationComponent,
+      },
+    ],
   },
   {
     path: '**', // http://localhost:4200/doesnotexists

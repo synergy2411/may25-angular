@@ -303,3 +303,40 @@ providedIn: "root"
 # Routing
 
 > ng g c components/header
+> ng g c components/page-not-found
+> ng g s services/auth
+> ng g guard guards/login
+
+> app/guards/login.guard.ts
+
+# SPA Advantage
+
+- Better user experience
+- Less server interaction
+- less network bandwidth usage
+
+# SPA Disadvantage
+
+- Sends complete app in one go to the browser (lazy loading)
+
+---
+
+microservices
+monorepos
+micro-frontends
+
+---
+
+# Child Routing / Nested Routing
+
+http://localhost:4200/products/99/overview
+http://localhost:4200/products/99/specification
+
+> ng g c components/demo/products
+> ng g c components/demo/products/overview
+> ng g c components/demo/products/specification
+
+- Modules
+- Standalone components
+- Debugging, Optimizing, Deployment preparation
+- Testing

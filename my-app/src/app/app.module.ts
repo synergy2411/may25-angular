@@ -27,6 +27,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ProductsComponent } from './components/demo/products/products.component';
+import { OverviewComponent } from './components/demo/products/overview/overview.component';
+import { SpecificationComponent } from './components/demo/products/specification/specification.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ExpenseFormComponent,
     PageNotFoundComponent,
     HeaderComponent,
+    ProductsComponent,
+    OverviewComponent,
+    SpecificationComponent,
   ],
   imports: [
     // imports module to access their functionality
