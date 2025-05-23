@@ -365,3 +365,7 @@ http://localhost:4200/products/99/specification
 - Signals : reactive programming
 
 - Testing
+
+# Adding Angular Material
+
+- ng add @angular/material

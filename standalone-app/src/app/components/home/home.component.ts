@@ -1,11 +1,12 @@
 import { Component, signal, computed } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { ReversePipe } from '../../pipes/reverse.pipe';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReversePipe, CommonModule],
+  imports: [ReversePipe, CommonModule, MatButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
